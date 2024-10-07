@@ -1,7 +1,4 @@
-let init_amount = 20000
-let monthly_contributions = 400
-let number_of_years = 30
-let interest_rate = 10
+const prompt = require('prompt-sync')()
 
 function compound_interest (init_amount, monthly_contributions, number_of_years, interest_rate) {
     let total = init_amount
@@ -26,11 +23,20 @@ function print_output(init_amount, monthly_contributions, number_of_years, inter
     MONTHLY_CONTRIBUTION: ${monthly_contributions}\n
     NUMBER_OF_YEARS: ${number_of_years}\n
     INTEREST_RATE: ${interest_rate}\n\n
-    FINAL_COMBINED_VALUE: ${final_value}\n
+    FINAL_COMBINED_VALUE: $${final_value}\n
     REGULAR_AMOUNT: $${value_without_compounding}\n
-    DIFFERENCE: $${final_value - value_without_compounding}
+    DIFFERENCE: $${(final_value - value_without_compounding).toFixed(2)}
     `
     console.log(summary)
 }
 
-print_output()
+function run () {
+    let init_amount = parseInt(prompt('What is your initial investment?'))
+    let monthly_contributions = parseInt(prompt('What is your monthly contribution?'))
+    let number_of_years = parseInt(prompt('For home many years would you like to compound your interest?'))
+    let interest_rate = parseInt(prompt('What is your expected interest rate?'))
+
+    print_output(init_amount, monthly_contributions, number_of_years, interest_rate)
+}
+
+run()
