@@ -19,8 +19,8 @@ function print_output(init_amount, monthly_contributions, number_of_years, inter
     let final_value = compound_interest(init_amount, monthly_contributions, number_of_years, interest_rate)
     let value_without_compounding = calculate_regular_amount(init_amount, monthly_contributions, number_of_years)
     let summary =`
-    INIT_AMOUNT: ${init_amount}\n
-    MONTHLY_CONTRIBUTION: ${monthly_contributions}\n
+    INIT_AMOUNT: $${init_amount}\n
+    MONTHLY_CONTRIBUTION: $${monthly_contributions}\n
     NUMBER_OF_YEARS: ${number_of_years}\n
     INTEREST_RATE: ${interest_rate}\n\n
     FINAL_COMBINED_VALUE: $${final_value}\n
